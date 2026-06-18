@@ -117,10 +117,37 @@ async def match_job(data: SkillRequest):
         })
 
     results = sorted(results, key=lambda x: x["match_score"], reverse=True)
-
     best = results[0]
 
+
     missing_skills = best["missing_skills"]
+
+    ROADMAPS = {
+        "DBMS": [
+            "Week 1: Learn DBMS Fundamentals",
+            "Week 2: SQL Queries and Joins",
+            "Week 3: Normalization and Indexing",
+            "Week 4: Build a Database Mini Project"
+        ],
+        "React": [
+            "Week 1: React Basics",
+            "Week 2: Components and Props",
+            "Week 3: State Management",
+            "Week 4: Build a React Project"
+        ],
+        "Python": [
+            "Week 1: Python Fundamentals",
+            "Week 2: Functions and OOP",
+            "Week 3: File Handling and APIs",
+            "Week 4: Build a Python Project"
+        ]
+    }
+
+    learning_roadmap = {}
+
+    for skill in missing_skills:
+        if skill in ROADMAPS:
+            learning_roadmap[skill] = ROADMAPS[skill]
 
     if best["match_score"] >= 80:
         level = "Strong Profile 🚀"
@@ -133,5 +160,6 @@ async def match_job(data: SkillRequest):
         "best_match": best,
         "profile_level": level,
         "recommendation": f"Focus on: {', '.join(missing_skills) if missing_skills else 'No major gaps'}",
+        "learning_roadmap": learning_roadmap,
         "all_matches": results
     }
