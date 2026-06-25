@@ -2,7 +2,7 @@
 
 > **AI-powered career intelligence system — Resume analysis, job matching, skill gap identification, and personalized learning roadmaps.**
 
-Built with **Python (OOP)** · **SQL / SQLite (DBMS)** · **DSA (Trie, MinHeap, HashMap)** · **Artificial Intelligence(NLP)-rulebased**
+Built with **Python (OOP)** · **SQL / SQLite (DBMS)** · **DSA (Trie, MinHeap, HashMap)**
 
 ---
 
@@ -72,7 +72,7 @@ ResumeReader  SkillExtractor   DatabaseManager
 | Database | SQLite via `sqlite3` (standard library) |
 | DSA | Trie (skill lookup), MinHeap (job ranking), HashMap (gap frequency) |
 | PDF Parsing | `pdfplumber` / `PyPDF2` (optional) |
-|Artificial Intelligence (Rule-based NLP)|
+| No APIs | Fully offline, no external services |
 
 ---
 
